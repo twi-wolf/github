@@ -213,7 +213,6 @@
             font-size: 1rem;
         }
         
-        /* Platform-specific colors */
         .heroku-btn {
             background: linear-gradient(135deg, #6762a6, #9b4dff);
         }
@@ -291,92 +290,28 @@
             margin-right: 4px;
         }
         
-        /* Mobile optimizations */
         @media (max-width: 480px) {
-            body {
-                padding: 8px;
-                align-items: flex-start;
-            }
-            
-            .container {
-                max-width: 100%;
-            }
-            
-            .header {
-                padding: 10px 8px;
-                margin-bottom: 12px;
-            }
-            
-            .header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .wolf-icon {
-                font-size: 24px;
-            }
-            
-            .deploy-card {
-                padding: 15px 12px;
-            }
-            
-            .card-header h2 {
-                font-size: 1.4rem;
-            }
-            
-            .card-header p {
-                font-size: 0.8rem;
-            }
-            
-            .form-group label {
-                font-size: 0.85rem;
-                margin-bottom: 4px;
-            }
-            
-            .input-wrapper input {
-                padding: 10px 12px 10px 40px;
-                font-size: 0.9rem;
-            }
-            
-            .github-icon {
-                left: 10px;
-                font-size: 1.2rem;
-            }
-            
-            .platform-grid {
-                gap: 6px;
-                margin: 12px 0 3px;
-            }
-            
-            .platform-button {
-                padding: 10px 4px;
-                font-size: 0.8rem;
-                gap: 4px;
-            }
-            
-            .platform-button i {
-                font-size: 0.9rem;
-            }
-            
-            .info-text {
-                margin-top: 15px;
-                padding: 10px;
-                font-size: 0.75rem;
-            }
+            body { padding: 8px; align-items: flex-start; }
+            .container { max-width: 100%; }
+            .header { padding: 10px 8px; margin-bottom: 12px; }
+            .header h1 { font-size: 1.8rem; }
+            .wolf-icon { font-size: 24px; }
+            .deploy-card { padding: 15px 12px; }
+            .card-header h2 { font-size: 1.4rem; }
+            .card-header p { font-size: 0.8rem; }
+            .form-group label { font-size: 0.85rem; margin-bottom: 4px; }
+            .input-wrapper input { padding: 10px 12px 10px 40px; font-size: 0.9rem; }
+            .github-icon { left: 10px; font-size: 1.2rem; }
+            .platform-grid { gap: 6px; margin: 12px 0 3px; }
+            .platform-button { padding: 10px 4px; font-size: 0.8rem; gap: 4px; }
+            .platform-button i { font-size: 0.9rem; }
+            .info-text { margin-top: 15px; padding: 10px; font-size: 0.75rem; }
         }
         
-        /* Very small devices */
         @media (max-width: 360px) {
-            .header h1 {
-                font-size: 1.6rem;
-            }
-            
-            .platform-button {
-                font-size: 0.75rem;
-            }
-            
-            .platform-button i {
-                font-size: 0.8rem;
-            }
+            .header h1 { font-size: 1.6rem; }
+            .platform-button { font-size: 0.75rem; }
+            .platform-button i { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -455,7 +390,6 @@
     </div>
 
     <script>
-        // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = Math.min(20, Math.floor(window.innerWidth / 30));
@@ -464,92 +398,60 @@
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
-                
                 const size = 2 + Math.random() * 4;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.opacity = 0.1 + Math.random() * 0.3;
-                
                 particle.style.animationDelay = `${Math.random() * 20}s`;
                 particle.style.animationDuration = `${15 + Math.random() * 20}s`;
-                
                 particlesContainer.appendChild(particle);
             }
         }
 
-        // Get form elements
         const form = document.getElementById('deployForm');
         const usernameInput = document.getElementById('githubUsername');
-        
-        // Platform buttons
         const herokuBtn = document.getElementById('deployHerokuBtn');
         const wolfhostBtn = document.getElementById('deployWolfHostBtn');
         const railwayBtn = document.getElementById('deployRailwayBtn');
         const renderBtn = document.getElementById('deployRenderBtn');
         const replitBtn = document.getElementById('deployReplitBtn');
-        
         const allButtons = [herokuBtn, wolfhostBtn, railwayBtn, renderBtn, replitBtn];
 
-        // Load saved username
         const savedUsername = localStorage.getItem('wolfbot_github_username');
-        if (savedUsername) {
-            usernameInput.value = savedUsername;
-        }
+        if (savedUsername) usernameInput.value = savedUsername;
 
-        // Save username on input
         usernameInput.addEventListener('input', function() {
             localStorage.setItem('wolfbot_github_username', this.value.trim());
         });
 
-        // Platform URLs
         const platformUrls = {
-            heroku: 'https://heroku.com/deploy?template=https://github.com/7silent-wolf/silentwolf',
+            heroku:   'https://heroku.com/deploy?template=https://github.com/sil3nt-wolf/silentwolf',
             wolfhost: 'https://host.xwolf.space',
-            railway: 'https://railway.app/new/template?template=https://github.com/7silent-wolf/silentwolf',
-            render: 'https://render.com/deploy?repo=https://github.com/7silent-wolf/silentwolf',
-            replit: 'https://replit.com/github/7silent-wolf/silentwolf'
+            railway:  'https://railway.app/new/template?template=https://github.com/sil3nt-wolf/silentwolf',
+            render:   'https://render.com/deploy?repo=https://github.com/sil3nt-wolf/silentwolf',
+            replit:   'https://replit.com/github/sil3nt-wolf/silentwolf'
         };
 
-        // Handle platform deployment
         function handleDeploy(platform, event) {
             event.preventDefault();
-            
             const username = usernameInput.value.trim();
-            
-            if (!username) {
-                alert('Please enter your GitHub username');
-                return;
-            }
-
-            // Disable all buttons
+            if (!username) { alert('Please enter your GitHub username'); return; }
             allButtons.forEach(btn => btn.disabled = true);
-            
-            // Show loading on clicked button
             const clickedButton = event.target.closest('button');
-            const originalContent = clickedButton.innerHTML;
-            
             clickedButton.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Redirecting...`;
-            
-            // Redirect after short delay
-            setTimeout(() => {
-                window.location.href = platformUrls[platform];
-            }, 800);
+            setTimeout(() => { window.location.href = platformUrls[platform]; }, 800);
         }
 
-        // Attach event listeners
-        herokuBtn.addEventListener('click', (e) => handleDeploy('heroku', e));
+        herokuBtn.addEventListener('click',   (e) => handleDeploy('heroku', e));
         wolfhostBtn.addEventListener('click', (e) => handleDeploy('wolfhost', e));
-        railwayBtn.addEventListener('click', (e) => handleDeploy('railway', e));
-        renderBtn.addEventListener('click', (e) => handleDeploy('render', e));
-        replitBtn.addEventListener('click', (e) => handleDeploy('replit', e));
+        railwayBtn.addEventListener('click',  (e) => handleDeploy('railway', e));
+        renderBtn.addEventListener('click',   (e) => handleDeploy('render', e));
+        replitBtn.addEventListener('click',   (e) => handleDeploy('replit', e));
 
-        // Prevent default form submission
         form.addEventListener('submit', (e) => e.preventDefault());
 
-        // Initialize particles
         createParticles();
         window.addEventListener('resize', createParticles);
     </script>
