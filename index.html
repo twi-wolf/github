@@ -1,81 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>WOLFBOT | Deploy Options</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-green: #00ff00;
-            --dark-green: #00cc00;
-            --light-green: #33ff33;
-            --black: #000000;
-            --dark-gray: #111111;
-            --gray: #222222;
-            --light-gray: #333333;
-            --white: #ffffff;
-            
-            /* Platform Colors */
-            --heroku-purple: #6762a6;
-            --heroku-light: #9b4dff;
-            --railway-purple: #7C3AED;
-            --render-blue: #46E3B7;
-            --replit-blue: #808bed;
-            --replit-dark: #0E1525;
-            --wolfhost-green: #00ff00;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--black);
-            color: var(--white);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            line-height: 1.4;
-            padding: 10px;
-        }
-        
-        #particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        .particle {
-            position: absolute;
-            background-color: var(--primary-green);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(100px, 50px) rotate(90deg); }
-            50% { transform: translate(50px, 100px) rotate(180deg); }
-            75% { transform: translate(-50px, 50px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 550px;
-            margin: 0 auto;
-            position: relative;
+   position: relative;
             z-index: 1;
         }
         
@@ -427,11 +350,11 @@
         });
 
         const platformUrls = {
-            heroku:   'https://heroku.com/deploy?template=https://github.com/SilentWolf-Kenya/silentwolf',
+            heroku:   'https://heroku.com/deploy?template=https://github.com/WOLFTECH-Ke/silentwolf',
             wolfhost: 'https://host.xwolf.space',
-            railway:  'https://railway.app/new/template?template=https://github.com/SilentWolf-Kenya/silentwolf',
-            render:   'https://render.com/deploy?repo=https://github.com/SilentWolf-Kenya/silentwolf',
-            replit:   'https://replit.com/github/SilentWolf-Kenya/silentwolf'
+            railway:  'https://railway.app/new/template?template=https://github.com/WOLFTECH-Ke/silentwolf',
+            render:   'https://render.com/deploy?repo=https://github.com/WOLFTECH-Ke/silentwolf',
+            replit:   'https://replit.com/github/WOLFTECH-Ke/silentwolf'
         };
 
         function handleDeploy(platform, event) {
